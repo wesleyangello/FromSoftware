@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FromSoftware</title>
+    <style>
+        /* Estilos globais */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-image: url('cenario.jpg'); /* Imagem de fundo */
+            background-size: cover;
+            background-position: center;
+            color: #fff; /* Texto claro para contrastar com o fundo escuro */
+            height: 100vh; /* Faz o corpo ocupar toda a altura da tela */
+        }
+
+        header {
+            background-color: rgba(0, 0, 0, 0.7); /* Transparência para sobrepor a imagem de fundo */
+            color: #fff;
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 3em;
+            margin: 0;
+        }
+
+        header p {
+            font-size: 1.2em;
+        }
+
+        /* Barra de navegação */
+        nav {
+            background-color: rgba(0, 0, 0, 0.7); /* Transparência */
+            text-align: center;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none; /* Remove o sublinhado dos links */
+            padding: 14px 20px;
+            display: inline-block;
+            text-align: center;
+            font-weight: normal; /* Garante que os links não fiquem em negrito */
+        }
+
+        nav a:hover {
+            background-color: #666;
+        }
+
+        /* Conteúdo */
+        .container {
+            padding: 20px;
+            background-color: rgba(0, 0, 0, 0.5); /* Fundo escuro com transparência */
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(219, 5, 5, 0.1);
+            margin-top: 20px;
+        }
+
+        .section-title {
+            font-size: 2.5em;
+            color: #ffffff;
+            margin-bottom: 20px;
+        }
+
+        .about, .games, .contact {
+            background-color: rgba(255, 255, 255, 0); /* Fundo branco com transparência */
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(219, 5, 5, 0.1);
+            padding: 20px;
+            margin-bottom: 30px;
+        }
+
+        .games-list {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 30px;
+        }
+
+        .game-card {
+            background-color: #000000;
+            border-radius: 8px;
+            overflow: hidden;
+            text-align: center;
+            width: 95%;
+            max-width: 600px;
+            padding: 0;
+        }
+
+        .game-card img {
+            width: 100%;
+            height: 500px;
+            object-fit: cover;
+        }
+
+        .game-card h3 {
+            font-size: 1.8em;
+            margin: 10px 0;
+        }
+
+        .game-card h3 a {
+            font-weight: normal; /* Remove o negrito dos links dentro de h3 */
+            text-decoration: none; /* Remove o sublinhado dos links dentro de h3 */
+            color: #fff5f5;
+        }
+
+        .game-card p {
+            padding: 0 10px;
+            font-size: 1.2em;
+        }
+
+        footer {
+            background-color: #222;
+            color: #fff;
+            padding: 10px 0;
+            text-align: center;
+        }
+
+        footer a {
+            color: #bbb;
+            text-decoration: none; /* Remove o sublinhado do link no rodapé */
+            font-weight: normal; /* Garante que o link no rodapé não fique em negrito */
+        }
+
+        #back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background-color: #7c374c;
+            color: #fff;
+            padding: 15px 25px;
+            border: none;
+            border-radius: 50%;
+            font-size: 1.5em;
+            cursor: pointer;
+            display: none;
+            z-index: 1000;
+        }
+
+        #back-to-top:hover {
+            background-color: #0e0d0d;
+        }
+
+        /* Estilo do formulário de contato */
+        .contact form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .contact input, .contact textarea {
+            padding: 10px;
+            font-size: 1em;
+            border-radius: 8px;
+            border: 1px solid #ccc;
+        }
+
+        .contact button {
+            background-color: #7c374c;
+            color: #fff;
+            padding: 12px;
+            font-size: 1.2em;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+
+        .contact button:hover {
+            background-color: #0e0d0d;
+        }
+
+        /* Responsividade */
+        @media screen and (max-width: 768px) {
+            .container {
+                padding: 10px;
+            }
+
+            .section-title {
+                font-size: 2em;
+            }
+
+            nav {
+                text-align: left;
+            }
+
+            nav a {
+                padding: 12px;
+            }
+
+            .game-card {
+                width: 95%;
+            }
+
+            .game-card img {
+                height: 300px;
+            }
+        }
+
+        @media screen and (max-width: 480px) {
+            header h1 {
+                font-size: 2em;
+            }
+
+            nav a {
+                padding: 10px;
+                font-size: 0.9em;
+            }
+
+            .game-card img {
+                height: 250px;
+            }
+
+            .game-card h3 {
+                font-size: 1.4em;
+            }
+
+            .game-card p {
+                font-size: 1em;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>FromSoftware</h1>
+    <p>Desenvolvedora de mundos sombrios e desafiadores</p>
+</header>
+
+<nav>
+    <a href="#sobre">Sobre</a>
+    <a href="#jogos">Jogos</a>
+    <a href="cadastro.html">Contato</a>
+</nav>
+
+<div class="container">
+    <!-- Seção sobre a empresa -->
+    <section id="sobre" class="about">
+        <h2 class="section-title">Sobre a FromSoftware</h2>
+        <p>A FromSoftware é uma desenvolvedora japonesa de jogos, famosa por suas franquias de RPG desafiadoras, como "Dark Souls", "Bloodborne", "Sekiro" e "Elden Ring". Criadora de experiências imersivas e mundos sombrios, a empresa se tornou referência no design de jogos complexos e profundos, com jogabilidade e narrativa únicas.</p>
+    </section>
+
+    <!-- Seção dos jogos -->
+    <section id="jogos" class="games">
+        <h2 class="section-title">Jogos Icônicos</h2>
+        <div class="games-list">
+            <div class="game-card">
+                <img src="dark.jpg" alt="Dark Souls">
+                <h3><a href="https://www.playstation.com/pt-br/games/dark-souls-remastered/" target="_blank">Dark Souls</a></h3>
+                <p>Um dos jogos mais desafiadores, com combate estratégico e um mundo interconectado cheio de mistérios.</p>
+            </div>
+            <div class="game-card">
+                <img src="blood.jfif" alt="Bloodborne">
+                <h3><a href="https://www.playstation.com/pt-br/games/bloodborne" target="_blank">Bloodborne</a></h3>
+                <p>Um jogo de terror gótico, com uma narrativa sombria e ação intensa, ambientado em uma cidade infestada por horrores.</p>
+            </div>
+            <div class="game-card">
+                <img src="elden.webp" alt="Elden Ring">
+                <h3><a href="https://www.playstation.com/pt-br/games/elden-ring/" target="_blank">Elden Ring</a></h3>
+                <p>O mais recente sucesso, um RPG de mundo aberto com uma narrativa escrita por George Raymond Richard Martin e um vasto universo explorável.</p>
+            </div>
+        </div>
+    </section>
+<footer>
+    <p>&copy; 2024 FromSoftware. Todos os direitos reservados.</p>
+    <h2><a href="https://www.fromsoftware.jp/pt/" target="_blank">Visite o site oficial da FromSoftware</a></h2>
+</footer>
+
+<!-- Botão "Voltar ao topo" -->
+<button id="back-to-top" onclick="scrollToTop()">↑</button>
+
+<script>
+    // Mostra o botão "Voltar ao topo" quando o usuário rola para baixo
+    window.onscroll = function() {
+        let button = document.getElementById('back-to-top');
+        if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+            button.style.display = 'block';
+        } else {
+            button.style.display = 'none';
+        }
+    };
+
+    // Função para voltar ao topo
+    function scrollToTop() {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    }
+</script>
+
+</body>
+</html>
